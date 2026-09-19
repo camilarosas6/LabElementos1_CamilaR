@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Laboratorio de Elementos Programables I",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-pi-pico", "id": "pico", "top": 16, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnA",
+      "top": 313.4,
+      "left": -105.6,
+      "attrs": { "color": "green", "label": "A" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnB",
+      "top": 246.2,
+      "left": -172.8,
+      "attrs": { "color": "blue", "label": "B" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRed",
+      "top": 130.8,
+      "left": 282.2,
+      "attrs": { "color": "red", "label": "LOCKED" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledYellow",
+      "top": 198,
+      "left": 301.4,
+      "attrs": { "color": "yellow", "label": "WAIT" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGreen",
+      "top": 294,
+      "left": 272.6,
+      "attrs": { "color": "green", "label": "ACCESS" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRed",
+      "top": 147,
+      "left": 165,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rYellow",
+      "top": 197,
+      "left": 165,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGreen",
+      "top": 282.35,
+      "left": 153.6,
+      "attrs": { "value": "330" }
+    }
+  ],
+  "connections": [
+    [ "btnA:2.l", "pico:GND.3", "black", [] ],
+    [ "btnB:2.l", "pico:GND.3", "black", [] ],
+    [ "rRed:2", "ledRed:A", "red", [] ],
+    [ "ledRed:C", "pico:GND.3", "black", [] ],
+    [ "pico:GP14", "rYellow:1", "orange", [] ],
+    [ "rYellow:2", "ledYellow:A", "orange", [] ],
+    [ "ledYellow:C", "pico:GND.3", "black", [] ],
+    [ "pico:GP15", "rGreen:1", "green", [] ],
+    [ "rGreen:2", "ledGreen:A", "green", [] ],
+    [ "ledGreen:C", "pico:GND.3", "black", [] ],
+    [ "btnA:1.l", "pico:GP16", "green", [ "h0", "v-124.8" ] ],
+    [ "btnB:1.l", "pico:GP17", "blue", [ "h9.6", "v-57.6" ] ],
+    [ "rRed:1", "pico:GP13", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
